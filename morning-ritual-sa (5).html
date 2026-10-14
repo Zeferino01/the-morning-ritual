@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Morning Ritual — Own Your Morning, Own Your Day | R65.99</title>
+<meta name="description" content="The Morning Ritual Resource Cheat Sheet: a practical morning system for busy South Africans. Instant download, 30-day guarantee.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a0d04; --cream:#fff4e0; --amber:#ffb627; --orange:#f26a1b; --ember:#b8400a;
+  --glass:rgba(26,13,4,.38); --glass-line:rgba(255,226,170,.22);
+  --serif:'Playfair Display',serif; --sans:'Poppins',sans-serif; --ease:cubic-bezier(.22,1,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--cream);background:#1a0d04;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;border:0;background:none;cursor:pointer;color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+
+/* animated sunrise background shared by every screen */
+.screen{
+  position:relative;min-height:100vh;display:flex;align-items:center;padding:110px 0 70px;overflow:hidden;
+}
+.s1{background:linear-gradient(165deg,#1a0d04 0%,#6b2508 38%,#e8591a 78%,#ffb627 118%);background-size:100% 160%;animation:dawn 14s ease-in-out infinite alternate}
+.s2{background:linear-gradient(180deg,#ffb627 -30%,#f26a1b 25%,#8a2f09 70%,#2a1206 110%);background-size:100% 160%;animation:dawn 16s ease-in-out infinite alternate}
+.s3{background:linear-gradient(180deg,#2a1206 -10%,#7a2a07 45%,#d9561a 90%,#ffb627 130%);background-size:100% 160%;animation:dawn 15s ease-in-out infinite alternate}
+@keyframes dawn{from{background-position:0 0}to{background-position:0 100%}}
+.sun{position:absolute;border-radius:50%;filter:blur(2px);pointer-events:none;
+  background:radial-gradient(circle,rgba(255,200,80,.55),rgba(255,160,40,0) 68%);animation:breathe 7s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.12);opacity:1}}
+
+h1,h2,h3{font-family:var(--serif);line-height:1.08;letter-spacing:-.01em}
+.tag{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:20px}
+.tag::before{content:"";width:28px;height:2px;background:var(--amber)}
+
+/* countdown bar */
+.bar{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(18,8,2,.88);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--glass-line);padding:10px 0}
+.bar .wrap{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap}
+.bar-text{font-size:13px;font-weight:500;color:#ffd9a0}
+.bar-text b{color:var(--amber)}
+.clock{display:flex;gap:8px}
+.unit{min-width:54px;text-align:center;background:linear-gradient(180deg,#ffb627,#f26a1b);color:#1a0d04;border-radius:10px;padding:5px 6px 4px}
+.unit b{display:block;font-size:19px;line-height:1.1;font-variant-numeric:tabular-nums}
+.unit small{font-size:9px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:18px 38px;border-radius:100px;font-weight:700;font-size:16px;
+  background:linear-gradient(135deg,#ffd166,#ffb627 50%,#f26a1b);color:#1a0d04;box-shadow:0 14px 40px rgba(255,150,30,.4);
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease);animation:pulse 2.6s ease-in-out infinite}
+.btn:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 20px 50px rgba(255,150,30,.55)}
+@keyframes pulse{0%,100%{box-shadow:0 14px 40px rgba(255,150,30,.4)}50%{box-shadow:0 14px 60px rgba(255,170,50,.7)}}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.d1.in{transition-delay:.1s}.d2.in{transition-delay:.2s}.d3.in{transition-delay:.3s}
+
+/* screen 1 */
+.s1 .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+.s1 h1{font-size:clamp(38px,5.4vw,70px);margin-bottom:22px}
+.s1 h1 em{color:var(--amber);font-style:italic}
+.lede{font-size:17px;line-height:1.7;color:#ffe3b8;max-width:520px;margin-bottom:32px}
+.row{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.price-note{font-size:14px;color:#ffd9a0}
+.price-note s{opacity:.7}.price-note b{font-size:24px;color:#fff;font-family:var(--serif)}
+.ticks{display:flex;gap:22px;flex-wrap:wrap;margin-top:34px;font-size:13px;color:#ffd9a0}
+.ticks span::before{content:"✓";color:var(--amber);margin-right:8px;font-weight:700}
+.book-stage{position:relative;display:flex;justify-content:center}
+.book-stage img{width:min(360px,80%);filter:drop-shadow(0 40px 50px rgba(0,0,0,.5));animation:float 6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-18px) rotate(-1.2deg)}}
+.chip{position:absolute;background:var(--glass);border:1px solid var(--glass-line);backdrop-filter:blur(10px);border-radius:16px;padding:12px 16px;font-size:13px;font-weight:600}
+.chip.a{top:6%;right:0;animation:float 5s ease-in-out infinite}
+.chip.b{bottom:10%;left:0;animation:float 6s ease-in-out infinite reverse}
+
+/* screen 2 */
+.s2 .head{max-width:680px;margin-bottom:44px}
+.s2 h2{font-size:clamp(30px,4vw,52px);color:#fff}
+.s2 .head p{margin-top:14px;color:#ffe9c8;font-size:16px;line-height:1.7}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--glass);border:1px solid var(--glass-line);backdrop-filter:blur(14px);border-radius:24px;padding:30px 26px;transition:transform .4s var(--ease),border-color .4s}
+.card:hover{transform:translateY(-8px);border-color:var(--amber)}
+.card .n{font-family:var(--serif);font-size:15px;color:var(--amber);margin-bottom:12px}
+.card h3{font-size:22px;margin-bottom:10px;color:#fff}
+.card p{font-size:14px;line-height:1.65;color:#ffe0b0}
+.inside{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;margin-top:44px}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:12px 24px}
+.checks li{list-style:none;font-size:14.5px;display:flex;gap:10px}
+.checks li::before{content:"✓";color:var(--amber);font-weight:700}
+.inside img{width:100%;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45));transition:transform .6s var(--ease)}
+.inside:hover img{transform:scale(1.04) translateY(-4px)}
+.motto{margin-top:34px;font-family:var(--serif);font-style:italic;font-size:clamp(18px,2.2vw,26px);color:#fff;border-left:3px solid var(--amber);padding-left:18px}
+
+/* screen 3 */
+.s3 .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center}
+.s3 h2{font-size:clamp(32px,4.4vw,56px);margin-bottom:18px;color:#fff}
+.s3 .sub{color:#ffe3b8;line-height:1.7;margin-bottom:26px}
+.faq{border-top:1px solid var(--glass-line)}
+.q{border-bottom:1px solid var(--glass-line)}
+.q button{width:100%;text-align:left;padding:16px 2px;font-size:15px;font-weight:500;display:flex;justify-content:space-between;gap:16px}
+.q button::after{content:"+";color:var(--amber);font-size:20px;transition:transform .3s}
+.q.open button::after{transform:rotate(45deg)}
+.q div{max-height:0;overflow:hidden;font-size:14px;line-height:1.65;color:#ffe0b0;transition:max-height .45s var(--ease),padding .45s}
+.q.open div{max-height:160px;padding-bottom:16px}
+.pricebox{background:linear-gradient(160deg,rgba(26,13,4,.72),rgba(26,13,4,.5));border:1px solid rgba(255,200,100,.4);backdrop-filter:blur(16px);
+  border-radius:30px;padding:40px 36px;text-align:center;box-shadow:0 40px 80px rgba(0,0,0,.4);position:relative}
+.ribbon{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#ffd166,#f26a1b);color:#1a0d04;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:8px 20px;border-radius:100px;white-space:nowrap}
+.pricebox img{width:210px;margin:6px auto 8px}
+.pricebox h3{font-size:24px;color:#fff;margin-bottom:4px}
+.big{display:flex;align-items:baseline;justify-content:center;gap:14px;margin:14px 0 4px}
+.big s{font-size:20px;opacity:.6}.big b{font-family:var(--serif);font-size:60px;color:var(--amber)}
+.mini{font-size:12.5px;color:#ffd9a0;margin-bottom:22px}
+.list{list-style:none;text-align:left;display:grid;gap:10px;margin-bottom:26px;font-size:14px}
+.list li::before{content:"✓";color:var(--amber);font-weight:700;margin-right:10px}
+.pricebox .btn{width:100%}
+.safe{margin-top:16px;font-size:12.5px;color:#ffd9a0}
+footer{position:absolute;bottom:14px;left:0;right:0;text-align:center;font-size:11px;color:rgba(255,226,170,.55);padding:0 20px}
+
+@media(max-width:900px){
+  .screen{padding:120px 0 60px;min-height:auto}
+  .s1 .wrap,.s3 .wrap,.inside{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr}
+  .book-stage{order:-1}
+  .checks{grid-template-columns:1fr}
+  footer{position:static;margin-top:30px}
+}
+@media(max-width:520px){.bar-text{display:none}.wrap{padding:0 20px}.big b{font-size:50px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+/* ===== Purchase popup ===== */
+.purchase-popup{position:fixed;left:20px;bottom:20px;z-index:9999;width:min(310px,calc(100vw - 24px));padding:12px 14px 13px;
+  border:1px solid rgba(255,255,255,.3);border-radius:16px;background:rgba(26,13,4,.7);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  box-shadow:0 12px 34px rgba(0,0,0,.32),inset 0 1px 1px rgba(255,255,255,.2);color:#fff;
+  opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.purchase-popup.show{opacity:1;transform:none;pointer-events:auto}
+.popup-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px}
+.popup-top strong{font-size:10px;letter-spacing:1.4px;color:var(--amber)}
+.close-popup{border:0;background:transparent;color:rgba(255,255,255,.6);font-size:18px;line-height:1;cursor:pointer;padding:0}
+.close-popup:hover{color:#fff}
+.popup-content{display:flex;align-items:center;gap:12px}
+.product-cover{width:54px;height:70px;flex-shrink:0;border-radius:6px;object-fit:cover;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.purchase-info{min-width:0;flex:1}
+.location{display:flex;align-items:center;gap:6px;font-size:11.5px;color:rgba(255,255,255,.82);margin-bottom:4px;line-height:1.3}
+.flag{display:block;width:20px;height:13px;flex-shrink:0;border-radius:2px;box-shadow:0 0 0 1px rgba(255,255,255,.25)}
+.buyer{font-size:14px;font-weight:700;line-height:1.3}
+.buyer span{font-weight:400;color:rgba(255,255,255,.8)}
+.product-name{font-size:12px;font-weight:600;line-height:1.35;margin-top:2px}
+.confirmed{display:inline-flex;align-items:center;gap:5px;margin-top:7px;padding:3px 9px 3px 4px;border:1px solid rgba(95,231,165,.45);border-radius:30px;font-size:10px;color:#d7ffe9;background:rgba(32,184,117,.14)}
+.check{display:grid;place-items:center;width:15px;height:15px;background:#20b875;color:#fff;border-radius:50%;font-size:9px;font-weight:700}
+@media(max-width:480px){.purchase-popup{left:12px;bottom:12px}}
+</style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2137972423501809');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2137972423501809&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+
+<div class="bar">
+  <div class="wrap">
+    <span class="bar-text">Launch price of <b>R65.99</b> ends in</span>
+    <div class="clock" id="clock" aria-live="off">
+      <div class="unit"><b id="d">00</b><small>Days</small></div>
+      <div class="unit"><b id="h">00</b><small>Hrs</small></div>
+      <div class="unit"><b id="m">00</b><small>Min</small></div>
+      <div class="unit"><b id="s">00</b><small>Sec</small></div>
+    </div>
+  </div>
+</div>
+
+<!-- SCREEN 1 -->
+<section class="screen s1">
+  <div class="sun" style="width:620px;height:620px;right:-160px;bottom:-200px"></div>
+  <div class="wrap">
+    <div>
+      <div class="tag reveal">The Morning Ritual · Resource Cheat Sheet</div>
+      <h1 class="reveal d1">Rise before the rush.<br><em>Own the day.</em></h1>
+      <p class="lede reveal d2">Load shedding, taxi queues, the N1 at 6:30 — you can't control the morning, but you can control how you start it. A simple, practical system for South Africans who are done starting the day already behind.</p>
+      <div class="row reveal d3">
+        <a href="#" class="btn cta">Get it for R65.99 →</a>
+        <div class="price-note"><s>R449</s> &nbsp; <b>R65.99</b><br>One-off payment · instant download</div>
+      </div>
+      <div class="ticks reveal d3"><span>Instant delivery</span><span>Print or read on your phone</span><span>30-day guarantee</span></div>
+    </div>
+    <div class="book-stage reveal d2">
+      <img src="https://i.ibb.co/4wjmyJ87/Imagem-Chat-GPT-14-10-2026-19-01-50.png" alt="The Morning Ritual Resource Cheat Sheet cover">
+      <div class="chip a">☀ Built for real mornings</div>
+      <div class="chip b">⚡ Lekker simple</div>
+    </div>
+  </div>
+</section>
+
+<!-- SCREEN 2 -->
+<section class="screen s2">
+  <div class="sun" style="width:520px;height:520px;left:-180px;top:-160px"></div>
+  <div class="wrap">
+    <div class="head">
+      <div class="tag reveal">Made for Mzansi mornings</div>
+      <h2 class="reveal d1">Whether you hustle in Joburg, Cape Town or Durban.</h2>
+      <p class="reveal d2">One page for the rushed days, one for the slow ones, and a night-before routine that takes the stress out of tomorrow.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal d1"><div class="n">01</div><h3>The rushed morning</h3><p>Overslept? Lights out? A short fallback routine for the school run and the commute, so a bad start doesn't become a bad day.</p></div>
+      <div class="card reveal d2"><div class="n">02</div><h3>The slow morning</h3><p>Sunday reset or day off — a gentler routine to recharge, spend time with family and get ready for the week ahead.</p></div>
+      <div class="card reveal d3"><div class="n">03</div><h3>The night before</h3><p>Lay out clothes, pack lunch, write tomorrow's top tasks. Prepare once and the power cut won't catch you off guard.</p></div>
+    </div>
+    <div class="inside">
+      <div>
+        <ul class="checks">
+          <li>Morning journal template</li><li>Busy-morning routine ideas</li>
+          <li>Slow-morning routine ideas</li><li>Device-free first hour guide</li>
+          <li>Night-before prep checklist</li><li>Yearly review so it keeps working</li>
+        </ul>
+        <p class="motto reveal">One better morning at a time. That's how a better life gets built.</p>
+      </div>
+      <img src="https://i.ibb.co/4wjmyJ87/Imagem-Chat-GPT-14-10-2026-19-01-50.png" alt="The Morning Ritual full product bundle">
+    </div>
+  </div>
+</section>
+
+<!-- SCREEN 3 -->
+<section class="screen s3">
+  <div class="sun" style="width:640px;height:640px;left:30%;bottom:-300px"></div>
+  <div class="wrap">
+    <div>
+      <div class="tag reveal">Your move</div>
+      <h2 class="reveal d1">Tomorrow can start differently.</h2>
+      <p class="sub reveal d2">Grab the cheat sheet while the launch price is on, and try it for 30 days. If it doesn't work for you, you get your money back.</p>
+      <div class="faq reveal d3">
+        <div class="q open"><button>How do I get it?</button><div>Straight after payment you get a download link by email. Open it on your phone or print it.</div></div>
+        <div class="q"><button>Is it a subscription?</button><div>No. One payment, and it's yours to keep.</div></div>
+        <div class="q"><button>What if it's not for me?</button><div>Ask for a refund within 30 days of purchase and you'll be refunded.</div></div>
+      </div>
+    </div>
+    <div class="pricebox reveal d2">
+      <div class="ribbon">Launch price</div>
+      <img src="https://i.ibb.co/4wjmyJ87/Imagem-Chat-GPT-14-10-2026-19-01-50.png" alt="The Morning Ritual bundle">
+      <h3>The Morning Ritual</h3>
+      <div class="mini">Resource Cheat Sheet + bonus checklist</div>
+      <div class="big"><s>R449</s><b>R65.99</b></div>
+      <div class="mini">One-off payment · instant download</div>
+      <ul class="list">
+        <li>Full Resource Cheat Sheet</li>
+        <li>Morning checklist you can print</li>
+        <li>Works on phone, tablet or paper</li>
+      </ul>
+      <a href="#" class="btn cta">Start my new morning →</a>
+      <div class="safe">🔒 Secure checkout · 30-day money-back guarantee</div>
+    </div>
+  </div>
+  <footer>General self-improvement information only, not medical or professional advice. Results vary.</footer>
+</section>
+
+<!-- Purchase popup -->
+<div class="purchase-popup" id="purchasePopup" role="status" aria-live="polite">
+  <div class="popup-top"><strong>🛒 RECENT PURCHASE</strong><button class="close-popup" id="closePopup" aria-label="Close notification">&times;</button></div>
+  <div class="popup-content">
+    <img class="product-cover" src="https://i.ibb.co/4wjmyJ87/Imagem-Chat-GPT-14-10-2026-19-01-50.png" alt="The Morning Ritual">
+    <div class="purchase-info">
+      <div class="location"><svg class="flag" viewBox="0 0 9 6" role="img" aria-label="South Africa flag"><rect width="9" height="3" fill="#E03C31"/><rect y="3" width="9" height="3" fill="#001489"/><path d="M0 0L3.6 3H9M0 6L3.6 3" fill="none" stroke="#fff" stroke-width="2"/><path d="M0 0L3.6 3H9M0 6L3.6 3" fill="none" stroke="#007749" stroke-width="1.1"/><polygon points="0,.5 2.5,3 0,5.5" fill="#FFB81C"/><polygon points="0,1.05 1.8,3 0,4.95" fill="#000"/></svg><span id="buyerPlace">Soweto, Gauteng</span></div>
+      <div class="buyer"><b id="buyerName">Thabo M.</b> <span>purchased</span></div>
+      <div class="product-name">The Morning Ritual Resource Cheat Sheet</div>
+      <div class="confirmed"><span class="check">✓</span>Purchase confirmed</div>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var names=["Thabo M.","Naledi K.","Sipho D.","Lerato P.","Ayanda N.","Kagiso M.","Zanele S.","Johan V.","Priya N.","Thandi M.","Pieter B.","Nomsa C.","Mpho R.","Bongani Z.","Fatima A.","Lungile T."];
+  var places=["Soweto, Gauteng","Sandton, Gauteng","Pretoria, Gauteng","Cape Town, Western Cape","Stellenbosch, Western Cape","Durban, KwaZulu-Natal","Pietermaritzburg, KwaZulu-Natal","Gqeberha, Eastern Cape","East London, Eastern Cape","Bloemfontein, Free State","Polokwane, Limpopo","Mbombela, Mpumalanga","Rustenburg, North West","Kimberley, Northern Cape"];
+  var pop=document.getElementById("purchasePopup"),stopped=false,last=-1;
+  var pick=function(a){return a[Math.floor(Math.random()*a.length)]};
+  function cycle(){
+    if(stopped)return;
+    var n;do{n=pick(names)}while(n===last);last=n;
+    document.getElementById("buyerName").textContent=n;
+    document.getElementById("buyerPlace").textContent=pick(places);
+    pop.classList.add("show");
+    setTimeout(function(){
+      pop.classList.remove("show");
+      setTimeout(cycle,8000+Math.random()*7000);
+    },5000);
+  }
+  document.getElementById("closePopup").addEventListener("click",function(){stopped=true;pop.classList.remove("show")});
+  setTimeout(cycle,4000);
+})();
+</script>
+
+<script>
+/* ===== SET THESE ===== */
+const OFFER_END = new Date("2026-10-31T23:59:59+02:00"); // real deadline, South African time
+const CHECKOUT_URL = "https://checkout.escalepay.com/8527077";                                // your Hotmart/Kiwify/PayFast link
+/* ===================== */
+document.querySelectorAll(".cta").forEach(a=>a.href=CHECKOUT_URL);
+
+const pad=n=>String(n).padStart(2,"0");
+function tick(){
+  let t=Math.max(0,OFFER_END-new Date());
+  const d=Math.floor(t/864e5);t%=864e5;
+  const h=Math.floor(t/36e5);t%=36e5;
+  const m=Math.floor(t/6e4);const s=Math.floor(t%6e4/1e3);
+  document.getElementById("d").textContent=pad(d);
+  document.getElementById("h").textContent=pad(h);
+  document.getElementById("m").textContent=pad(m);
+  document.getElementById("s").textContent=pad(s);
+}
+tick();setInterval(tick,1000);
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+document.querySelectorAll(".q button").forEach(b=>b.addEventListener("click",()=>{
+  const q=b.parentElement,was=q.classList.contains("open");
+  document.querySelectorAll(".q").forEach(x=>x.classList.remove("open"));
+  if(!was)q.classList.add("open");
+}));
+</script>
+</body>
+</html>
